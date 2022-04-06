@@ -1,0 +1,10 @@
+golden.json
+biomimicry_predictions.csv
+labeled_golden.json
+lenient_labeled_golden.json
+S800-1.0.tar.gz
+species_labeled - Copy.csv
+species_lenient_labeled - Copy.csv
+species_tagger.ipynb
+S800_Tagger/*
+ncbi_species.json
