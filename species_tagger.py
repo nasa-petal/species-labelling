@@ -301,7 +301,7 @@ def export_csv(output_name: str, records: pd.DataFrame):
         records : Pandas DataFrame
             DataFrame of biomimicry records.
     """
-    final_records = records.drop(["unigrams","bigrams","trigrams", "lemma_grams", "full_grams"], axis=1)
+    final_records = records.drop(["unigrams","bigrams","trigrams", "lemma_grams", "full_grams","abstract_lemma"], axis=1)
  
     if ("csv" in output_name.lower()):
         final_records.to_csv(f"{output_name}", index="ignore")
@@ -309,9 +309,9 @@ def export_csv(output_name: str, records: pd.DataFrame):
     elif ("json" in output_name.lower()):
         with open(f"{output_name}", "w") as file:
             file.write("[\n")
-            golden_size = records.shape[0]
+            golden_size = final_records.shape[0]
 
-            for index, row in records.iterrows():
+            for index, row in final_records.iterrows():
                 file.write("\t")
                 file.write(json.dumps(row.to_dict()))
                 if(index < golden_size - 1):

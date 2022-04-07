@@ -8,3 +8,4 @@ species_lenient_labeled - Copy.csv
 species_tagger.ipynb
 S800_Tagger/*
 ncbi_species.json
+old_golden.json
